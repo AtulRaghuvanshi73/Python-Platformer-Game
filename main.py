@@ -73,6 +73,15 @@ def draw(window, background, bg_image, player):
     pygame.display.update()
 
 
+def handle_move(player):
+    keys = pygame.key.get_pressed()
+
+    player.x_vel = 0 #to reset the velocity to zero after the movement
+    if keys[pygame.K_LEFT]:
+        player.move_left(PLAYER_VEL)
+    if keys[pygame.K_RIGHT]:
+        player.move_right(PLAYER_VEL)
+
 def main(window):
     clock = pygame.time.Clock()
     background, bg_image  = get_background("Blue.png")

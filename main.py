@@ -33,6 +33,10 @@ def load_sprite_sheets(dir1, dir2, width,height, direction=False):
             rect = pygame.Rect(i * width, 0, width, height)
             surface.blit(sprite_sheet,(0,0), rect)
             sprites.append(pygame.transform.scale2x(surface))
+        
+        if direction: #making the animation multi-directional
+            all_sprites[image.replace(".png","")+ "_right"] = sprites 
+            all_sprites[image.replace(".png","")+ "_left"] = flip(sprites) 
 
 class Player(pygame.sprite.Sprite):
     COLOR = (255,0,0)

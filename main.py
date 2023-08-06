@@ -18,6 +18,8 @@ window = pygame.display.set_mode((WIDTH,HEIGHT))
 def flip(sprites):
     return [pygame.transform.flip(sprite, True, False) for sprite in sprites]
 
+
+#basically loading images
 def load_sprite_sheets(dir1, dir2, width,height, direction=False):
     path = join("assets", dir1, dir2)
     images = [f for f in listdir(path)  if isfile(join(path,f))]
@@ -37,7 +39,10 @@ def load_sprite_sheets(dir1, dir2, width,height, direction=False):
         if direction: #making the animation multi-directional
             all_sprites[image.replace(".png","")+ "_right"] = sprites 
             all_sprites[image.replace(".png","")+ "_left"] = flip(sprites) 
+        else:
+            all_sprites[image.replace(".png","")] = sprites
 
+    return all_sprites
 class Player(pygame.sprite.Sprite):
     COLOR = (255,0,0)
     GRAVITY = 1

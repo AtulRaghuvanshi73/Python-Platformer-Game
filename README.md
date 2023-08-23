@@ -14,7 +14,7 @@ To get started with the game, you'll need to have Python and Pygame installed on
 # Installation
 <p>1.Make sure you have Python installed. If you don't, you can download it from the official Python website: https://www.python.org/downloads/</p>
 <p>Install Pygame by running the following command: pip install pygame</p>
-<p>Clone this Git repository to your local machine using the git clone commmand </p>
+<p>Clone this Git repository to your local machine using the git clone command </p>
 
 # Controls
 <ol>
